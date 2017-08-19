@@ -40,25 +40,15 @@ int main (void)
                     }
                 }
             }
-            if(pos[num+1]==1 || pos[num+2]==1 || pos[num+1]==2 || pos[num+2]==2 || pos[num+1]==7 || pos[num+2]==7)
-            printf("");
-            else if(pos[i]==1 || pos[i]==2 || pos[i]==7)
+            if((pos[i]==1 || pos[i]==2 || pos[i]==7) && (pos[num+1]!=1 && pos[num+2]!=1 && pos[num+1]!=2 && pos[num+2]!=2 && pos[num+1]!=7 && pos[num+2]!=7))
             printf("player%d:あなたの役職は村人です。\n", player_num[i]);
-            else if(pos[num+1]==3 || pos[num+2]==3 || pos[num+1]==4 || pos[num+2]==4)
-            printf("");          
-            else if(pos[i]==3 || pos[i]==4)
+            else if((pos[i]==3 || pos[i]==4) && (pos[num+1]!=3 && pos[num+2]!=3 && pos[num+1]!=4 && pos[num+2]!=4))
             printf("player%d:あなたの役職は人狼です。\n", player_num[i]);
-            else if(pos[num+1]==5 || pos[num+2]==5)
-            printf("");
-            else if (pos[i]==5)
+            else if (pos[i]==5 && (pos[num+1]!=5 && pos[num+2]!=5))
             printf("player%d:あなたの役職は占い師です。\n", player_num[i]);
-            else if(pos[num+1]==6 || pos[num+2]==6)
-            printf("");
-            else if (pos[i]==6) 
+            else if (pos[i]==6 && (pos[num+1]!=6 && pos[num+2]!=6)) 
             printf("player%d:あなたの役職は怪盗です。\n", player_num[i]);
-            else if(pos[num+1]==8 || pos[num+2]==8)
-            printf("");
-            else if (pos[i]==8)
+            else if (pos[i]==8 && (pos[num+1]!=8 && pos[num+2]!=8))
             printf("player%d:あなたの役職は吊人です。\n", player_num[i]);
         }           
         printf("\n");
