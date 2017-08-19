@@ -9,9 +9,9 @@ int main (void)
     int num, i, j, k, flag, dice, uranai, kaitou, touhyou; 
     int yakusyoku[12];
     int player_number[12];
-    int touhyou_result[10]={0,0,0,0,0,0,0,0,0,0};
-    int count[10]={0,0,0,0,0,0,0,0,0,0};
-    int max[10]={0,0,0,0,0,0,0,0,0,0};
+    int touhyou_result[10];
+    int count[10];
+    int max[10];
     srand((unsigned)time( NULL ));
     
     printf("プレイ人数を入力してください。(4～10)→");
@@ -40,7 +40,6 @@ int main (void)
                     }
                 }
             }
-            
             if(yakusyoku[num+1]==1 || yakusyoku[num+1]==2 || yakusyoku[num+1]==7 || yakusyoku[num+1]==10 || yakusyoku[num+1]==11 || yakusyoku[num+1]==12 || yakusyoku[num+2]==1 || yakusyoku[num+2]==2 || yakusyoku[num+2]==7 || yakusyoku[num+2]==10 || yakusyoku[num+2]==11 || yakusyoku[num+2]==12)
                 printf("");
             else if(yakusyoku[i]==1 || yakusyoku[i]==2 || yakusyoku[i]==7 || yakusyoku[i]==10 || yakusyoku[i]==11 || yakusyoku[i]==12)
@@ -291,7 +290,7 @@ int main (void)
             }
             if(max[1]==max[2] && max[1]>max[3] && max[1]>max[4])
             {
-                printf("投票の結果、player%2dとplater%2dを処刑することにしました。\n", player_number[1], player_number[2]);
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[2]);
                 if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
                     printf("人狼チームの勝利です。\n");
                 else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4)
@@ -301,7 +300,7 @@ int main (void)
             }
             if(max[1]==max[3] && max[1]>max[2] && max[1]>max[4])
             {
-                printf("投票の結果、player%2dとplater%2dを処刑することにしました。\n", player_number[1], player_number[3]);
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[3]);
                 if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
                     printf("人狼チームの勝利です。\n");
                 else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4)
@@ -311,7 +310,7 @@ int main (void)
             }
             if(max[1]==max[4] && max[1]>max[2] && max[1]>max[3])
             {
-                printf("投票の結果、player%2dとplater%2dを処刑することにしました。\n", player_number[1], player_number[4]);
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[4]);
                 if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4))
                     printf("人狼チームの勝利です。\n");
                 else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
@@ -321,7 +320,7 @@ int main (void)
             }
             if(max[2]==max[3] && max[2]>max[1] && max[2]>max[4])
             {
-                printf("投票の結果、player%2dとplater%2dを処刑することにしました。\n", player_number[2], player_number[3]);
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[3]);
                 if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
                     printf("人狼チームの勝利です。\n");
                 else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4)
@@ -331,7 +330,7 @@ int main (void)
             }
             if(max[2]==max[4] && max[2]>max[1] && max[2]>max[3])
             {
-                printf("投票の結果、player%2dとplater%2dを処刑することにしました。\n", player_number[2], player_number[4]);
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[4]);
                 if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4))
                     printf("人狼チームの勝利です。\n");
                 else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
@@ -341,7 +340,7 @@ int main (void)
             }
             if(max[3]==max[4] && max[3]>max[1] && max[3]>max[2])
             {
-                printf("投票の結果、player%2dとplater%2dを処刑することにしました。\n", player_number[3], player_number[4]);
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[3], player_number[4]);
                 if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4))
                     printf("人狼チームの勝利です。\n");
                 else if(yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
@@ -350,28 +349,451 @@ int main (void)
                     printf("勝利チームは存在しません。\n");
             }
         }
+        if(num==5)
+        {
+            if(max[1]==max[2]==max[3]==max[4]==max[5])
+            {
+                printf("投票の結果、誰も処刑しないことにしました。\n");
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4))
+                    printf("村人チームの勝利です。\n");
+                else
+                    printf("人狼チームの勝利です。\n");
+            }
+            if(max[1]>max[2] && max[1]>max[3] && max[1]>max[4] && max[1]>max[5])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[1]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]>max[1] && max[2]>max[3] && max[2]>max[4] && max[2]>max[5])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[2]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[3]>max[1] && max[3]>max[2] && max[3]>max[4] && max[3]>max[5])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[3]);
+                if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[3]==3 || yakusyoku[3]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[4]>max[1] && max[4]>max[2] && max[4]>max[3] && max[4]>max[5])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[4]);
+                if((yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[5]>max[1] && max[5]>max[2] && max[5]>max[3] && max[5]>max[4])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[5]);
+                if((yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[2] && max[1]>max[3] && max[1]>max[4] && max[1]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[2]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[3] && max[1]>max[2] && max[1]>max[4] && max[1]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[3]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[4] && max[1]>max[2] && max[1]>max[3] && max[1]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[4]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[5] && max[1]>max[2] && max[1]>max[3] && max[1]>max[4])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[5]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[5]!=3 && ykusyoku[5]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]==max[3] && max[2]>max[1] && max[2]>max[4] && max[2]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[3]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]==max[4] && max[2]>max[1] && max[2]>max[3] && max[2]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[4]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]==max[5] && max[2]>max[1] && max[2]>max[3] && max[2]>max[4] )
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[5]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[3]==max[4] && max[3]>max[1] && max[3]>max[2] && max[3]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[3], player_number[4]);
+                if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[3]==max[5] && max[3]>max[1] && max[3]>max[2] && max[3]>max[4])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[3], player_number[5]);
+                if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[4]==max[5] && max[4]>max[1] && max[4]>max[2] && max[4]>max[3])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[4], player_number[5]);
+                if((yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+        }
+        if(num==6)
+        {
+           if(max[1]==max[2]==max[3]==max[4]==max[5]==max[6])
+            {
+                printf("投票の結果、誰も処刑しないことにしました。\n");
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[6]!=3 &&yakusyoku[6]!=4))
+                    printf("村人チームの勝利です。\n");
+                else
+                    printf("人狼チームの勝利です。\n");
+            }
+            if(max[1]>max[2] && max[1]>max[3] && max[1]>max[4] && max[1]>max[5] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[1]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]>max[1] && max[2]>max[3] && max[2]>max[4] && max[2]>max[5] && max[2]>max[6])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[2]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[3]>max[1] && max[3]>max[2] && max[3]>max[4] && max[3]>max[5] && max[3]>max[6])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[3]);
+                if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[3]==3 || yakusyoku[3]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[4]>max[1] && max[4]>max[2] && max[4]>max[3] && max[4]>max[5] && max[4]>max[6])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[4]);
+                if((yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[5]>max[1] && max[5]>max[2] && max[5]>max[3] && max[5]>max[4] && max[5]>max[6])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[5]);
+                if((yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[6]>max[1] && max[6]>max[2] && max[6]>max[3] && max[6]>max[4] && max[6]>max[5])
+            {
+                printf("投票の結果、player%2dを処刑することにしました。\n", player_number[6]);
+                if((yakusyoku[6]!=3 && yakusyoku[6]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[6]==3 || yakusyoku[6]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[2] && max[1]>max[3] && max[1]>max[4] && max[1]>max[5] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[2]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[3] && max[1]>max[2] && max[1]>max[4] && max[1]>max[5] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[3]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[4] && max[1]>max[2] && max[1]>max[3] && max[1]>max[5] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[4]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[5] && max[1]>max[2] && max[1]>max[3] && max[1]>max[4] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[5]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[5]!=3 && ykusyoku[5]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[6] && max[1]>max[2] && max[1]>max[3] && max[1]>max[4] && max[1]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[6]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[6]!=3 && ykusyoku[6]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[6]==3 || yakusyoku[6]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]==max[3] && max[2]>max[1] && max[2]>max[4] && max[2]>max[5] && max[2]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[3]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 && yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]==max[4] && max[2]>max[1] && max[2]>max[3] && max[2]>max[5] && max[2]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[4]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6==3 || yakusyoku[6]==4]))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]==max[5] && max[2]>max[1] && max[2]>max[3] && max[2]>max[4] && max[2]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[5]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[2]==max[6] && max[2]>max[1] && max[2]>max[3] && max[2]>max[4] && max[2]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[2], player_number[6]);
+                if((yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[6]!=3 && yakusyoku[6]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[6]==3 || yakusyoku[6]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[3]==max[4] && max[3]>max[1] && max[3]>max[2] && max[3]>max[5] && max[3]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[3], player_number[4]);
+                if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[3]==max[5] && max[3]>max[1] && max[3]>max[2] && max[3]>max[4] && max[3]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[3], player_number[5]);
+                if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[3]==max[6] && max[3]>max[1] && max[3]>max[2] && max[3]>max[4] && max[3]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[3], player_number[6]);
+                if((yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[6]!=3 && yakusyoku[6]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[6]==3 || yakusyoku[6]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[4]==max[5] && max[4]>max[1] && max[4]>max[2] && max[4]>max[3] && max[4]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[4], player_number[5]);
+                if((yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[4]==max[6] && max[4]>max[1] && max[4]>max[2] && max[4]>max[3] && max[4]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[4], player_number[6]);
+                if((yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[6]!=3 && yakusyoku[6]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[6]==3 || yakusyoku[6]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[5]==max[6] && max[5]>max[1] && max[5]>max[2] && max[5]>max[3] && max[5]>max[4])
+            {
+                printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[5], player_number[6]);
+                if((yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[6]!=3 && yakusyoku[6]!=4) && (yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[2]==max[3] && max[1]>max[4] && max[1]>max[5] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dとplayer%dを処刑することにしました。\n", player_number[1], player_number[2], player_number[3]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[3]!=3 && yakusyoku[3]!=4) && (yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[2]==max[4] && max[1]>max[3] && max[1]>max[5] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dとplayer%dを処刑することにしました。\n", player_number[1], player_number[2], player_number[4]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[4]!=3 && yakusyoku[4]!=4) && (yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[5]==3 || yakusyoku[5]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[4]==3 || yakusyoku[4]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[2]==max[5] && max[1]>max[3] && max[1]>max[4] && max[1]>max[6])
+            {
+                printf("投票の結果、player%2dとplayer%2dとplayer%dを処刑することにしました。\n", player_number[1], player_number[2], player_number[5]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[6]==3 || yakusyoku[6]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            if(max[1]==max[2]==max[6] && max[1]>max[3] && max[1]>max[4] && max[1]>max[5])
+            {
+                printf("投票の結果、player%2dとplayer%2dとplayer%dを処刑することにしました。\n", player_number[1], player_number[2], player_number[6]);
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[2]!=3 && yakusyoku[2]!=4) && (yakusyoku[6]!=3 && yakusyoku[6]!=4) && (yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4 || yakusyoku[5]==3 || yakusyoku[5]==4))
+                    printf("人狼チームの勝利です。\n");
+                else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[6]==3 || yakusyoku[6]==4)
+                    printf("村人チームの勝利です。\n");
+                else 
+                    printf("勝利チームは存在しません。\n");
+            }
+            
+        }
         printf("\n");
         for(i=1; i<=num; i++)
         {
             if(yakusyoku[i]==1 || yakusyoku[i]==2 || yakusyoku[i]==7 || yakusyoku[i]==10 || yakusyoku[i]==11 || yakusyoku[i]==12)
             {
-                printf("%d票　player%2d(村人) →　player%2d\n", count[i], i, touhyou_result[i]);
+                printf("%d票　player%2d(村人) →　player%2d\n", count[i], player_number[i], touhyou_result[i]);
             }
             else if(yakusyoku[i]==3 || yakusyoku[i]==4 || yakusyoku[i]==9)
             {
-                printf("%d票　player%2d(人狼) →　player%2d\n", count[i], i, touhyou_result[i]);
+                printf("%d票　player%2d(人狼) →　player%2d\n", count[i], player_number[i], touhyou_result[i]);
             }
             else if(yakusyoku[i]==5)
             {
-                printf("%d票　player%2d(占い師) →　player%2d\n", count[i], i, touhyou_result[i]);
+                printf("%d票　player%2d(占い師) →　player%2d\n", count[i], player_number[i], touhyou_result[i]);
             }
             else if(yakusyoku[i]==6)
             {
-                printf("%d票　player%2d(怪盗) →　player%2d\n", count[i], i, touhyou_result[i]);
+                printf("%d票　player%2d(怪盗) →　player%2d\n", count[i], player_number[i], touhyou_result[i]);
             }
             else if(yakusyoku[i]==8)
             {
-                printf("%d票　player%2d(吊人) →　player%2d\n", count[i], i, touhyou_result[i]);
+                printf("%d票　player%2d(吊人) →　player%2d\n", count[i], player_number[i], touhyou_result[i]);
             }
             
         }
