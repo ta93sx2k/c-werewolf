@@ -6,7 +6,7 @@ void ninzu_nyuryoku(int);
 
 int main (void)
 {
-    int num, i, j, flag, dice;
+    int num, i, j, k, m, flag, dice;
     int a[12];
     srand((unsigned)time( NULL ));
     
@@ -36,16 +36,17 @@ int main (void)
             }
             
             if(a[i]==1 || a[i]==2 || a[i]==7 || a[i]==10 || a[i]==11 || a[i]==12)
-                printf("player%d:‚ ‚È‚½‚Ì–ğE‚Í‘ºl‚Å‚·B\n", i+1);
+                printf("player%2d:‚ ‚È‚½‚Ì–ğE‚Í‘ºl‚Å‚·B\n", i+1);
             else if (a[i]==3 || a[i]==4 || a[i]==9)
-                printf("player%d:‚ ‚È‚½‚Ì–ğE‚Íl˜T‚Å‚·B\n", i+1);
+                printf("player%2d:‚ ‚È‚½‚Ì–ğE‚Íl˜T‚Å‚·B\n", i+1);
             else if (a[i]==5)
-                printf("player%d:‚ ‚È‚½‚Ì–ğE‚Íè‚¢t‚Å‚·B\n", i+1);
+                printf("player%2d:‚ ‚È‚½‚Ì–ğE‚Íè‚¢t‚Å‚·B\n", i+1);
             else if (a[i]==6)
-                printf("player%d:‚ ‚È‚½‚Ì–ğE‚Í‰ö“‚Å‚·B\n", i+1);
+                printf("player%2d:‚ ‚È‚½‚Ì–ğE‚Í‰ö“‚Å‚·B\n", i+1);
             else if (a[i]==8)
-                printf("player%d:‚ ‚È‚½‚Ì–ğE‚Í’İl(‚Ä‚é‚Ä‚é)‚Å‚·B\n", i+1);
+                printf("player%2d:‚ ‚È‚½‚Ì–ğE‚Í’İl(‚Ä‚é‚Ä‚é)‚Å‚·B\n", i+1);
         }
+        
     }
     
     return 0;

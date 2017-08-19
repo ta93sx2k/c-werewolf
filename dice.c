@@ -5,7 +5,8 @@
 int main (void)
 {
     int num, i, j, flag, dice;
-    int a[12];
+    int dice_number[12];
+    int player_number[12];
     srand((unsigned)time( NULL ));
     
     printf("プレイ人数を入力してください。(4～10)→");
@@ -18,19 +19,20 @@ int main (void)
             flag=1;
             while(flag)
             {
+                player_number[i] = i+1;
                 flag=0;
                 dice = rand()%(num+2)+1;
-                a[i] = dice;
+                dice_number[i] = dice;
                 for(j=0 ; j<i ; j++)
                 {
-                    if(a[j]==a[i])
+                    if(dice_number[j]==dice_number[i])
                     {
                         flag = 1;
                         break;
                     }
                 }
             }
-            printf("%d", a[i]);
+            printf("player_number%2d → dice_number%2d\n", player_number[i], dice_number[i]);
         }
      }
 return 0;    
