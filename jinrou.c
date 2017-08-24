@@ -442,7 +442,7 @@ int main (void)
             if(max[1]==max[5] && max[1]>max[2] && max[1]>max[3] && max[1]>max[4])
             {
                 printf("投票の結果、player%2dとplayer%2dを処刑することにしました。\n", player_number[1], player_number[5]);
-                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[5]!=3 && ykusyoku[5]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
+                if((yakusyoku[1]!=3 && yakusyoku[1]!=4) && (yakusyoku[5]!=3 && yakusyoku[5]!=4) && (yakusyoku[2]==3 || yakusyoku[2]==4 || yakusyoku[3]==3 || yakusyoku[3]==4 || yakusyoku[4]==3 || yakusyoku[4]==4))
                     printf("人狼チームの勝利です。\n");
                 else if(yakusyoku[1]==3 || yakusyoku[1]==4 || yakusyoku[5]==3 || yakusyoku[5]==4)
                     printf("村人チームの勝利です。\n");
