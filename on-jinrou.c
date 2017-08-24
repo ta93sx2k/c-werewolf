@@ -10,7 +10,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
 
 int main (void)
 {
-    int nop, i, j, flag, divine, swap, exchange, vote; //"nop"は"number of people"の略
+    int nop, i, j, flag, divine, swap, vote; //"nop"は"number of people"の略
     int player_num[6]={};
     int pos[6]={};
     int rest[2]={};
@@ -357,6 +357,14 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 else 
                 printf("勝利チームは存在しません。\n");
             }
+            if(count[1]==count[2]==count[3]==count[4])
+            {
+                printf("投票の結果、誰もしません。\n");
+                if(pos[1]!=3 && pos[1]!=4 && pos[2]!=3 && pos[2]!=4 && pos[3]!=3 && pos[3]!=4 && pos[4]!=3 && pos[3]!=4)
+                printf("村人チームの勝利です。\n");
+                else
+                printf("村人チームの勝利です。\n");
+            }
         }
         if(nop==5)
         {
@@ -510,6 +518,14 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 else 
                 printf("勝利チームは存在しません。\n");
             }
+            if(count[1]==count[2]==count[3]==count[4]==count[5])
+            {
+                printf("投票の結果、誰もしません。\n");
+                if(pos[1]!=3 && pos[1]!=4 && pos[2]!=3 && pos[2]!=4 && pos[3]!=3 && pos[3]!=4 && pos[4]!=3 && pos[3]!=4 && count[5]!=3 && count[5]!=4) 
+                printf("村人チームの勝利です。\n");
+                else
+                printf("村人チームの勝利です。\n");
+            }
         }
         if(nop==6)
         {
@@ -518,7 +534,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dを処刑しました。\n", player_num[1]);
                 if(pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[1]==3 || pos[1]==4)
+                else if((pos[1]==3 || pos[1]==4) && pos[1]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[1]==8)
                 printf("吊人の勝利です。\n");
@@ -530,7 +546,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dを処刑しました。\n", player_num[2]);
                 if(pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[2]==3 || pos[2]==4)
+                else if((pos[2]==3 || pos[2]==4) && pos[2]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[2]==8)
                 printf("吊人の勝利です。\n");
@@ -542,7 +558,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dを処刑しました。\n", player_num[3]);
                 if(pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[3]==3 || pos[3]==4)
+                else if((pos[3]==3 || pos[3]==4) && pos[3]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[3]==8)
                 printf("吊人の勝利です。\n");
@@ -554,7 +570,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dを処刑しました。\n", player_num[4]);
                 if(pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[4]==3 || pos[4]==4)
+                else if((pos[4]==3 || pos[4]==4) && pos[4]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[4]==8)
                 printf("吊人の勝利です。\n");
@@ -566,7 +582,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dを処刑しました。\n", player_num[5]);
                 if(pos[5]!=3 && pos[5]!=4 && pos[5]!=8 && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[5]==3 || pos[5]==4)
+                else if((pos[5]==3 || pos[5]==4) && pos[5]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[5]==8)
                 printf("吊人の勝利です。\n");
@@ -578,7 +594,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dを処刑しました。\n", player_num[6]);
                 if(pos[6]!=3 && pos[6]!=4 && pos[6]!=8 && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[6]==3 || pos[6]==4)
+                else if((pos[6]==3 || pos[6]==4) && pos[6]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[6]==8)
                 printf("吊人の勝利です。\n");
@@ -590,7 +606,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[1], player_num[2]);
                 if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[2]!=3 && pos[2]!=4 && pos[2]!=8) && (pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4)
+                else if((pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4) && pos[1]!=8 && pos[2]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[1]==8 || pos[2]==8)
                 printf("吊人の勝利です。\n");
@@ -600,9 +616,9 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[1]==count[3] && count[1]>count[2] && count[1]>count[4] && count[1]>count[5] && count[1]>count[6])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[1], player_num[3]);
-                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[3]!=3 && pos[3]!=4 pos[3]!=8) && (pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8) && (pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4)
+                else if((pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4) && pos[1]!=8 && pos[3]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[1]==8 || pos[3]==8)
                 printf("吊人の勝利です。\n");
@@ -612,9 +628,9 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[1]==count[4] && count[1]>count[2] && count[1]>count[3] && count[1]>count[4] && count[1]>count[5])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[1], player_num[4]);
-                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4)
+                else if((pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4) && pos[1]!=8 && pos[4]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[1]==8 || pos[4]==8)
                 printf("吊人の勝利です。\n");
@@ -626,7 +642,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[1], player_num[5]);
                 if((pos[1]!=3 && pos[1]!=4  && pos[1]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[1]==3 || pos[1]==4 || pos[5]==3 || pos[5]==4)
+                else if((pos[1]==3 || pos[1]==4 || pos[5]==3 || pos[5]==4) && pos[1]!=8 && pos[5]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[1]==8 || pos[5]==8)
                 printf("吊人の勝利です。\n");
@@ -638,7 +654,7 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[1], player_num[6]);
                 if((pos[1]!=3 && pos[1]!=4  && pos[1]!=8  && pos[6]!=3 && pos[6]!=4 && pos[6]!=4) && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[1]==3 || pos[1]==4 || pos[6]==3 || pos[6]==4)
+                else if((pos[1]==3 || pos[1]==4 || pos[6]==3 || pos[6]==4) && pos[1]!=8 && pos[6]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[1]==8 || pos[6]==8)
                 printf("吊人の勝利です。\n");
@@ -648,9 +664,9 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[2]==count[3] && count[2]>count[1] && count[2]>count[4] && count[2]>count[5] && count[2]>count[6])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[2], player_num[3]);
-                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 pos[3]!=3 && pos[3]!=4 && pos[3]!=8) && (pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8) && (pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4)
+                else if((pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4) && pos[2]!=8 && pos[3]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[2]==8 || pos[3]==8)
                 printf("吊人の勝利です。\n");
@@ -660,9 +676,9 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[2]==count[4] && count[2]>count[1] && count[2]>count[3] && count[2]>count[5] && count[2]>count[6])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[2], player_num[4]);
-                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4)
+                else if((pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4) && pos[2]!=8 && pos[4]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[2]==8 || pos[4]==8)
                 printf("吊人の勝利です。\n");
@@ -672,9 +688,9 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[2]==count[5] && count[2]>count[1] && count[2]>count[3] && count[2]>count[4] && count[2]>count[6])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[2], player_num[5]);
-                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 pos[3]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[3]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[2]==3 || pos[2]==4 || pos[5]==3 || pos[5]==4)
+                else if((pos[2]==3 || pos[2]==4 || pos[5]==3 || pos[5]==4) && pos[2]!=8 && pos[5]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[2]==8 || pos[5]==8)
                 printf("吊人の勝利です。\n");
@@ -684,9 +700,9 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[2]==count[6] && count[2]>count[1] && count[2]>count[3] && count[2]>count[4] && count[2]>count[5])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[2], player_num[6]);
-                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[2]==3 || pos[2]==4 || pos[6]==3 || pos[6]==4)
+                else if((pos[2]==3 || pos[2]==4 || pos[6]==3 || pos[6]==4) && pos[2]!=8 && pos[6]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[2]==8 || pos[6]==8)
                 printf("吊人の勝利です。\n");
@@ -696,9 +712,9 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[3]==count[4] && count[3]>count[1] && count[3]>count[2] && count[3]>count[5] && count[3]>count[6])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[3], player_num[4]);
-                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4)
+                else if((pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4) && pos[3]!=8 && pos[4]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[3]==8 || pos[4]==8)
                 printf("吊人の勝利です。\n");
@@ -708,16 +724,311 @@ void game(int i, int j, int nop, int vote, int (*player_num), int (*count), int 
             if(count[3]==count[5] && count[3]>count[1] && count[3]>count[2] && count[3]>count[4] && count[3]>count[6])
             {
                 printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[3], player_num[5]);
-                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
+                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
                 printf("人狼チームの勝利です。\n");
-                else if(pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4)
+                else if((pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4) && pos[3]!=8 && pos[5]!=8)
                 printf("村人チームの勝利です。\n");
                 else if(pos[3]==8 || pos[5]==8)
                 printf("吊人の勝利です。\n");
                 else
                 printf("勝利チームは存在しません。\n");
             }
-            
+            if(count[3]==count[6] && count[3]>count[1] && count[3]>count[2] && count[3]>count[4] && count[3]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[3], player_num[6]);
+                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[3]==3 || pos[3]==4 || pos[6]==3 || pos[6]==4) && pos[3]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[3]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[4]==count[5] && count[4]>count[1] && count[4]>count[2] && count[4]>count[3] && count[4]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[4], player_num[5]);
+                if((pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4) && pos[4]!=8 && pos[4]!=8 && pos[5]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[4]==8 || pos[5]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[4]==count[6] && count[4]>count[1] && count[4]>count[2] && count[4]>count[3] && count[4]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[4], player_num[6]);
+                if((pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4) && pos[4]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[4]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[5]==count[6] && count[5]>count[1] && count[5]>count[2] && count[5]>count[3] && count[5]>count[4])
+            {
+                printf("投票の結果、player%dとplayer%dを処刑しました。\n", player_num[5], player_num[6]);
+                if((pos[5]!=3 && pos[5]!=4 && pos[5]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4) && pos[5]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[5]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[2]==count[3] && count[1]>count[4] && count[1]>count[5] && count[1]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[2], player_num[3]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8) && (pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4) && pos[1]!=8 && pos[2]!=8 && pos[3]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[2]==8 || pos[3]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[2]==count[4] && count[1]>count[3] && count[1]>count[5] && count[1]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[2], player_num[4]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4) && pos[1]!=8 && pos[2]!=8 && pos[4]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[2]==8 || pos[4]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[2]==count[5] && count[1]>count[3] && count[1]>count[4] && count[1]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[2], player_num[5]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4) && pos[1]!=8 && pos[2]!=8 && pos[5]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[2]==8 || pos[5]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[2]==count[6] && count[1]>count[3] && count[1]>count[4] && count[1]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[2], player_num[6]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[6]==3 || pos[6]==4) && pos[1]!=8 && pos[2]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[2]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[3]==count[4] && count[1]>count[2] && count[1]>count[5] && count[1]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[3], player_num[4]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[2]==3 || pos[2]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4) && pos[1]!=8 && pos[3]!=8 && pos[4]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[3]==8 || pos[4]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[3]==count[5] && count[1]>count[2] && count[1]>count[4] && count[1]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[3], player_num[5]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4) && pos[1]!=8 && pos[3]!=8 && pos[5]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[3]==8 || pos[5]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[3]==count[6] && count[1]>count[2] && count[1]>count[4] && count[1]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[3], player_num[6]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[6]==3 || pos[6]==4) && pos[1]!=8 && pos[3]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[3]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[4]==count[5] && count[1]>count[2] && count[1]>count[3] && count[1]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[4], player_num[5]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4) && pos[1]!=8 && pos[4]!=8 && pos[5]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[4]==8 || pos[5]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[4]==count[6] && count[1]>count[2] && count[1]>count[3] && count[1]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[4], player_num[6]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4) && pos[1]!=8 && pos[4]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[4]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[5]==count[6] && count[1]>count[2] && count[1]>count[3] && count[1]>count[4])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[1], player_num[5], player_num[6]);
+                if((pos[1]!=3 && pos[1]!=4 && pos[1]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[1]==3 || pos[1]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4) && pos[1]!=8 && pos[5]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[1]==8 || pos[5]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[2]==count[3]==count[4] && count[2]>count[1] && count[2]>count[5] && count[2]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[2], player_num[3], player_num[4]);
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8) && (pos[1]==3 || pos[1]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4) && pos[2]!=8 && pos[3]!=8 && pos[4]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[2]==8 || pos[3]==8 || pos[4]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[2]==count[3]==count[5] && count[2]>count[1] && count[2]>count[4] && count[2]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[2], player_num[3], player_num[5]);
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4) && pos[2]!=8 && pos[3]!=8 && pos[5]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[2]==8 || pos[3]==8 || pos[5]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[2]==count[3]==count[6] && count[2]>count[1] && count[2]>count[4] && count[2]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[2], player_num[3], player_num[6]);
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4 || pos[6]==3 || pos[6]==4) && pos[2]!=8 && pos[3]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[2]==8 || pos[3]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[2]==count[4]==count[5] && count[2]>count[1] && count[2]>count[3] && count[2]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[2], player_num[4], player_num[5]);
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4) && pos[2]!=8 && pos[4]!=8 && pos[5]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[2]==8 || pos[4]==8 || pos[5]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[2]==count[4]==count[6] && count[2]>count[1] && count[2]>count[3] && count[2]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[2], player_num[4], player_num[6]);
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4) && pos[2]!=8 && pos[4]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[2]==8 || pos[4]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[2]==count[5]==count[6] && count[2]>count[1] && count[2]>count[3] && count[2]>count[4])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[2], player_num[5], player_num[6]);
+                if((pos[2]!=3 && pos[2]!=4 && pos[2]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[2]==3 || pos[2]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4) && pos[2]!=8 && pos[5]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[2]==8 || pos[5]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[3]==count[4]==count[5] && count[3]>count[1] && count[3]>count[2] && count[3]>count[6])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[3], player_num[4], player_num[5]);
+                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[6]==3 || pos[6]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4) && pos[3]!=8 && pos[4]!=8 && pos[5]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[3]==8 || pos[4]==8 || pos[5]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[3]==count[4]==count[6] && count[3]>count[1] && count[3]>count[2] && count[3]>count[5])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[3], player_num[4], player_num[6]);
+                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[5]==3 || pos[5]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[3]==3 || pos[3]==4 || pos[4]==3 || pos[4]==4 || pos[6]==3 || pos[6]==4) && pos[3]!=8 && pos[4]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[3]==8 || pos[4]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[3]==count[5]==count[6] && count[3]>count[1] && count[3]>count[3] && count[3]>count[4])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[3], player_num[5], player_num[6]);
+                if((pos[3]!=3 && pos[3]!=4 && pos[3]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[4]==3 || pos[4]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[3]==3 || pos[3]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4) && pos[3]!=8 && pos[5]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[3]==8 || pos[5]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[4]==count[5]==count[6] && count[4]>count[1] && count[4]>count[2] && count[4]>count[3])
+            {
+                printf("投票の結果、player%dとplayer%dとplayer%dを処刑しました。\n", player_num[4], player_num[5], player_num[6]);
+                if((pos[4]!=3 && pos[4]!=4 && pos[4]!=8 && pos[5]!=3 && pos[5]!=4 && pos[5]!=8 && pos[6]!=3 && pos[6]!=4 && pos[6]!=8) && (pos[1]==3 || pos[1]==4 || pos[2]==3 || pos[2]==4 || pos[3]==3 || pos[3]==4))
+                printf("人狼チームの勝利です。\n");
+                else if((pos[4]==3 || pos[4]==4 || pos[5]==3 || pos[5]==4 || pos[6]==3 || pos[6]==4) && pos[4]!=8 && pos[5]!=8 && pos[6]!=8)
+                printf("村人チームの勝利です。\n");
+                else if(pos[4]==8 || pos[5]==8 || pos[6]==8)
+                printf("吊人の勝利です。\n");
+                else
+                printf("勝利チームは存在しません。\n");
+            }
+            if(count[1]==count[2]==count[3]==count[4]==count[5]==count[6])
+            {
+                printf("投票の結果、誰もしません。\n");
+                if(pos[1]!=3 && pos[1]!=4 && pos[2]!=3 && pos[2]!=4 && pos[3]!=3 && pos[3]!=4 && pos[4]!=3 && pos[3]!=4 && count[5]!=3 && count[5]!=4 && count[6]!=3 && count[6]!=4) 
+                printf("村人チームの勝利です。\n");
+                else
+                printf("村人チームの勝利です。\n");
+            }
         }
 
         for(i=1; i<=nop; i++)
